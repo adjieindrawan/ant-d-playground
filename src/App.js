@@ -1,26 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+
+// container
+import { AnalysisPage } from "./containers/DashboardPage";
+import LoginPage from "./containers/LoginPage";
+
+// router
+import { BrowserRouter, Switch } from "react-router-dom";
+import { MainLayout, LayoutRoute, EmptyLayout } from "./components/Layout";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <LayoutRoute
+            exact
+            path="/"
+            layout={EmptyLayout}
+            component={LoginPage}
+          />
+          <LayoutRoute
+            path="/dashboard/analysis"
+            layout={MainLayout}
+            component={AnalysisPage}
+          />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
