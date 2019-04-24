@@ -1,1 +1,1 @@
-export const ipUsers = "http://localhost:4000/users";
+export const apiUsers = "http://localhost:4000/users";

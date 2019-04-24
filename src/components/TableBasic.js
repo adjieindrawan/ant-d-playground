@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Table, Divider } from "antd";
+import { Table } from "antd";
 
-import { ipUsers } from "../api/config";
+import { apiUsers } from "../api/config";
 
 const axios = require("axios");
 
@@ -27,7 +27,7 @@ const columns = [
   }
 ];
 
-class EditableTable extends Component {
+class TableBasic extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -46,14 +46,9 @@ class EditableTable extends Component {
       });
     };
     axios
-      .get(ipUsers)
+      .get(apiUsers)
       .then(function(response) {
-        // handle success
         setData(response.data);
-      })
-      .catch(function(error) {
-        // handle error
-        console.log(error);
       })
       .then(function() {
         // always executed
@@ -62,11 +57,10 @@ class EditableTable extends Component {
   render() {
     return (
       <div>
-        {" "}
         <Table columns={columns} dataSource={this.state.data} />{" "}
       </div>
     );
   }
 }
 
-export default EditableTable;
+export default TableBasic;
