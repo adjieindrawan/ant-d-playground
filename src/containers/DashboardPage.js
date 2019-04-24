@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Button, Breadcrumb } from "antd";
+import { Breadcrumb } from "antd";
+import EditableTable from "../components/EditableTable";
 
 export class AnalysisPage extends Component {
   render() {
@@ -10,7 +11,7 @@ export class AnalysisPage extends Component {
           <Breadcrumb.Item>Analysis</Breadcrumb.Item>
         </Breadcrumb>
         <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
-          <Button type="primary">Button</Button>
+          <EditableTable />
         </div>
       </div>
     );

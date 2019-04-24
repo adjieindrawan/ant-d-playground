@@ -5,7 +5,9 @@
   "dependencies": {
     "ant-design-pro": "^2.3.1",
     "antd": "^3.16.5",
+    "axios": "^0.18.0",
     "customize-cra": "^0.2.12",
+    "faker": "^4.1.0",
     "react": "^16.8.6",
     "react-app-rewired": "^2.1.1",
     "react-dom": "^16.8.6",
@@ -15,7 +17,8 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject"
+    "eject": "react-app-rewired eject",
+    "mock:api": "json-server --watch src/api/db.json --port 4000"
   },
   "eslintConfig": {
     "extends": "react-app"
